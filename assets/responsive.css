@@ -1,0 +1,19 @@
+@media (max-width:740px){
+     
+    .card-chung {
+        margin-left: -88px;
+    }
+
+    .card-chung.second,
+    .card-chung.third {
+        height: 0;
+        width: 0;
+    }
+    .card-social a {
+        margin: 25px 15px 40px;
+    }
+
+    .card-contact {
+        margin-top: 8px;
+    }
+}

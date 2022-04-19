@@ -63,7 +63,13 @@ body {
 
 .card-chung p {
     color:var(--pink-color);
+}   
+
+.card-chung .text-description {
+    font-style: italic;
+    color: aqua;
 }
+
 .card-social {
     height: 93px;
 }

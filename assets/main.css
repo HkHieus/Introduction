@@ -7,6 +7,12 @@
 :root {
   --mycolor : linear-gradient(45deg, #00853e, #50c878);
   --pink-color : #f2726a;
+  --mycolor-2 :linear-gradient(
+    45deg,
+    rgb(65, 88, 208) 0%,
+    rgb(200, 80, 192) 50%,
+    rgb(255, 204, 112) 100%
+);
 }
 
 body {
@@ -98,4 +104,100 @@ body {
 .card-contact:hover {
     background-color: var(--pink-color);
     cursor: pointer;
+}
+
+.modal {
+  position : fixed;
+  top :0 ;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.modal.open {
+    display:flex;
+}
+
+.modal-container {
+    width:590px ;
+    height: 315px;
+    background-color: aliceblue;
+    color: #333;
+    position: relative;
+    animation: topdow ease 0.4s;
+}
+
+@keyframes topdow {
+    from {
+        opacity: 0;
+      transform: translateY(-160px);
+    }
+
+    to {
+        opacity: 1;
+      transform: translateY(0px);
+    }
+}
+
+.modal-header {
+   height: 30%;
+   background: var(--pink-color);
+}
+
+.modal-header__text {
+    text-align: center;
+    line-height:94.5px;
+    font-size: 23px;
+    color: #fff;
+}
+
+.modal-header__close {
+   position: absolute;
+   right: 0;
+   top : 0;
+   padding: 6px 18px;
+   cursor: pointer;
+}
+
+.modal-header__close:hover {
+    background-color: #ccc;
+
+}
+
+.modal-body {
+   height: 70%;
+   display: flex;
+   align-items: baseline;
+   justify-content: space-around;
+}
+
+.modal-body__github,
+.modal-body__face {
+  display: inline-block;
+  font-size: 82px;
+  margin-top: 16px;
+}
+
+.modal-body__face a {
+    color: #0572e6;
+}
+
+.modal-body__github a {
+  color: #242628;
+}
+
+.modal-close {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px 16px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    background: var(--mycolor-2);
+    color: #fff;
+    border-radius: 10px;
 }

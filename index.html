@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/main.css">
     <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./assets/responsive.css">
@@ -25,7 +26,7 @@
             <a href="#" class="card-icon ti-pinterest-alt"></a>
             <a href="#" class="card-icon ti-github"></a>
         </div>
-        <button class="card-contact">Contact me</button>
+        <button class="card-contact js-button">Contact me</button>
     </div>
      
     <div class="card-chung second">
@@ -41,7 +42,7 @@
             <a href="#" class="card-icon ti-pinterest-alt"></a>
             <a href="#" class="card-icon ti-github"></a>
         </div>
-        <button class="card-contact">Contact me</button>
+        <button class="card-contact js-button">Contact me</button>
     </div>
 
     <div class="card-chung third">
@@ -57,8 +58,67 @@
             <a href="#" class="card-icon ti-pinterest-alt"></a>
             <a href="#" class="card-icon ti-github"></a>
         </div>
-        <button class="card-contact">Contact me</button>
+        <button class="card-contact js-button">Contact me</button>
     </div>
+    
+      <div class="modal js-modal">
+          <div class="modal-container js-modal-container">
+              <div class="modal-header">
+                  <div class="modal-header__text">
+                      <h3>CONTACT</h3>
+                  </div>
+                  <div class="modal-header__close js-close">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <div class="modal-body__face">
+                    <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                    </a>
+                  </div>
+                  <div class="modal-body__github">
+                    <a href="">
+                    <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                       <a href="#" class="modal-close js-close-2">
+                           CLOSE
+                       </a>
+              </div>
+          </div>
+      </div>
+
+      <script>
+          const modal = document.querySelector('.js-modal');
+          const Buttons = document.querySelectorAll('.js-button');
+          const closeModal = document.querySelector('.js-close');
+          const closee = document.querySelector('.js-close-2');
+          const modalContainer = document.querySelector('.js-modal-container');
+          
+          console.log(closee);
+          
+          function openContact (){
+              modal.classList.add('open');
+          }
+
+          function closeContact (){
+              modal.classList.remove('open');
+          }
+
+          for(const Button of Buttons){
+              Button.addEventListener('click',openContact);
+          }
+
+          closeModal.addEventListener('click',closeContact);
+          closee.addEventListener('click',closeContact);
+          modal.addEventListener('click',closeContact);
+          modalContainer.addEventListener('click', function(event){
+            event.stopImmediatePropagation();
+          }
+          )
+
+      </script>
     
 </body>
 
